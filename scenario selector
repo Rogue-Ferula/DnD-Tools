@@ -1,0 +1,45 @@
+import os
+
+# Directory containing the charts
+charts_directory = r<PATH_TO_THE_DIRECTORY_CONTAINING_YOUR_CHARTS>
+
+# Ask for scenario input
+scenario = input("Enter the scenario (chart 1, chart 2, chart 3, chart 4, chart 5, chart 6): ")
+
+# Map scenarios to chart file names
+scenario_to_chart = {
+    "chart 1": <PATH_TO_YOUR_CHART>,
+    "chart 2": <PATH_TO_YOUR_CHART>,
+    "chart 3": <PATH_TO_YOUR_CHART>,
+    "chart 4": <PATH_TO_YOUR_CHART>,
+    "chart 5": <PATH_TO_YOUR_CHART>,
+    "chart 6": <PATH_TO_YOUR_CHART>
+}
+
+# Check if the scenario is valid
+if scenario not in scenario_to_chart:
+    print("Invalid scenario. Please try again.")
+    exit()
+
+# Ask for number input
+try:
+    line_number = int(input("Enter a number to select a line from the chart: "))
+except ValueError:
+    print("Invalid input. Please enter a number.")
+    exit()
+
+# Select the chart file based on the scenario
+chart_file = scenario_to_chart[scenario]
+chart_file_path = os.path.join(charts_directory, chart_file)
+
+# Read the chart file and select the line
+try:
+    with open(chart_file_path, 'r') as file:
+        lines = file.readlines()
+        if line_number > 0 and line_number <= len(lines):
+            selected_line = lines[line_number - 1].strip()
+            print(f"Selected line: {selected_line}")
+        else:
+            print("Invalid line number. Please try again.")
+except FileNotFoundError:
+    print(f"Chart file {chart_file} not found.")
