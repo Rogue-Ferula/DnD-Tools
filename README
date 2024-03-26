@@ -1,0 +1,24 @@
+Interactive Chart Viewer
+This Python script allows you to view specific lines from a set of charts stored in a directory. 
+Simply follow the prompts to select a scenario and enter a line number to view the corresponding line from the chart.
+
+Setup
+Ensure you have Python installed on your system.
+Clone or download this repository to your local machine.
+Usage
+Open a terminal or command prompt.
+Navigate to the directory where you've saved the script.
+Run the script using the command: python chart_viewer.py.
+Follow the on-screen prompts to select a scenario and enter a line number.
+Instructions
+Scenario Selection: You'll be prompted to enter a scenario from a list of available options.
+Line Number Input: Enter a number to select a line from the chart corresponding to your chosen scenario.
+Output: The script will display the selected line from the chart.
+Configuration
+charts_directory: Set the path to the directory containing your chart files.
+scenario_to_chart: Map scenarios to the filenames of the corresponding charts. Update this dictionary with the paths to your chart files.
+Note
+Ensure that the chart files exist in the specified directory and are accessible to the script.
+The script will exit if an invalid scenario or line number is provided.
+
+Feel free to customize the script to suit your specific requirements!
